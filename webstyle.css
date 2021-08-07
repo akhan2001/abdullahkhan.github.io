@@ -26,6 +26,11 @@ a {
     z-index: +5;
 }
 
+.png {
+    height: 15px;
+    width: auto;
+}
+
 .title {
     font-weight: bold;
     font-size: 18px;
@@ -71,7 +76,7 @@ a {
 
 .image {
     width: 100%;
-    height: 100%;
+    height: 100%;   
 }
 
 .image-mywork {
@@ -97,6 +102,7 @@ a {
     letter-spacing: 2px;
     transition: letter-spacing 0.7s;
     color: #ddb1b8;
+    opacity: 0.80;
 }
 
 .headertext:hover {
@@ -105,25 +111,27 @@ a {
 
 .headertext-work {
     position: absolute;
-    margin: 0 0 0 5%;
+    margin: 0 0 0 5%    ;
     padding: 0 40px;
     transform: translateY(-30%);
     top: 40%;
-    font-size: 100px;
+    font-size: 150px;
     color: #ddb1b8;
-    font-family: 'Poppins', sans-serif;
-    transition: letter-spacing 1s;
+    font-family: 'Titillium Web', sans-serif;
+    transition: letter-spacing 1s, opacity 1s;
+    opacity: 0.75;
 }
 
 .headertext-work:hover {
     letter-spacing: 3px;
+    opacity: 100%;
 }
 
 #work {
     color: #e43f5a;
     font-size: 40px;
     margin: 0;
-    transform: translateY(-170%);
+    transform: translateY(-250%);
 }
 
 .section-about {
@@ -149,10 +157,14 @@ article > img:hover {
 
 article > h3 {
     color: #e2657a;
+    font-size: 20px;
 }
 
 article > .work {
-    margin-bottom: 50px;
+    margin-bottom: 0px;
+    display: inline-block;
+    line-height: 150%;
+    font-size: 18px;
 }
 
 /*Error 404 Text*/
@@ -191,6 +203,46 @@ article > .work {
     color: #f2f2f2;
 }
 
+.section1 {
+    margin: 0;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #12121f;
+}
+
+.section2 {
+    margin: 0;
+    padding: 30px 20px;
+    text-align: center;
+    background-color: #0f0f1a;
+}
+
+#section-header {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+    color: #bbb;
+    font-size: 30px;
+    font-style: italic;
+}
+
+.section-text {
+    display: inline-block;
+    text-align: left;
+    padding: 30px 200px 40px 200px;
+    margin: 30px;
+    color: #bbb;
+}
+
+.section-text > h3 {
+    font-size: 35px;
+    color: #e43f5a;
+}
+
+.section-text > p {
+    font-size: 30px;
+}
+
 /*Cards*/
 .section-work {
     display: flex;
@@ -198,14 +250,24 @@ article > .work {
     flex-wrap: nowrap;
     justify-content: space-around;
     background-color: #0f0f1a;
-    padding: 30px 20px;
+    padding: 0px 20px 30px 20px;
 }
 
 .card-work {
-    background-color: #e2657a;
-    margin: 30px 20px;
+    background-color: #cfcfcf;
+    /*background: linear-gradient(180deg, rgba(225,225,230,1) 49%, rgba(242,242,242,1) 99%);*/
+    margin: 0px 20px 30px 20px;
     width: 35%;
     height: 45%;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 17px 30px 11px rgba(0, 0, 0, 1);
+    box-shadow: 2px 17px 30px 11px rgba(0, 0, 0, 1);
+    transition: 0.25s;
+}
+
+.card-work:hover {
+    transform: translateY(-10px);
+    background-color: #f2f2f2;
 }
 
 .section {
@@ -220,7 +282,7 @@ article > .work {
     width: 35%;
     height: 45%;
     background-color: #12121f;
-    border-radius: 3px;
+    border-radius: 10px;
     margin: 50px 30px;
     -webkit-box-shadow: 2px 17px 30px 11px rgba(138,149,158,0.5);
     box-shadow: 2px 17px 30px 11px rgba(138,149,158,0.5);
@@ -234,11 +296,44 @@ article > .work {
 .image img {
     width: 97%;
     padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
+
+.desc-work {
+    color: #090909;
+    text-align: center;
+    padding: 10px 5px;
+    margin: 0;
+}
+
+.desc-work h3 {
+    text-align: center;
+    font-size: 30px;
+    color: #12121f;
+}
+
+/*.desc-work button {
+    border: none;
+    margin: 10px;
+    background-color: #22223a;
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.5s;
+}
+
+.desc-work button:hover {
+    background-color: #12121f;
+}*/
 
 .desc {
     text-align: center;
-    padding: 15px 10px;
+    padding: 10px 5px;
+    margin: 0;
 }
 
 .desc h3 {
@@ -253,8 +348,7 @@ article > .work {
 
 .desc button {
     border: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     background-color: #e43f5a;
     color: #fff;
     padding: 8px 30px;
@@ -283,11 +377,22 @@ article > .work {
     list-style: none;
     padding-left: 0;
     font-size: 20px;
-    transition: all 0.5s;
+    transition: transform 0.5s, color 0.5s;
 }
 
 .socials a:hover, a:active {
     transform: scale(1.1);
+    color: #e43f5a;
+}
+
+i {
+    font-size: 30px;
+    margin-left: 15px;
+    color: #bbb;
+    transition: color 0.5s;
+}
+
+i:hover {
     color: #e43f5a;
 }
 
